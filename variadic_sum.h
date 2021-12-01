@@ -1,5 +1,4 @@
-#ifndef VARIADIC_SUM_H
-#define VARIADIC_SUM_H
+#pragma once
 
 /*
  * Sum -- Variadic Template
@@ -21,6 +20,3 @@ template <typename... T>
 constexpr auto sum2(T... args) {
     return (... + args);
 }
-
-
-#endif

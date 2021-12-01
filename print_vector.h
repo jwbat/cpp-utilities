@@ -1,7 +1,8 @@
+#pragma once
 #include <vector>
 #include <iomanip>
 
-using std::cout;
+using std::cout; using std::vector;
 
 template <typename T>
 void print_vector(vector<T>& vec) {

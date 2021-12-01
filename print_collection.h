@@ -1,5 +1,5 @@
-using std::cout;
-
+#pragma once
+using std::cout; using std::setw
 
 template <typename T>
 void print_collection(const T& coll) {

@@ -1,7 +1,9 @@
+#pragma once
 #include <iostream>
 #include <iomanip>
+#include <array>
 
-using std::cout;
+using std::cout; using std::array;
 
 template <typename T, size_t N>
 void print_array(array<T, N>& arr) {

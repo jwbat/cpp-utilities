@@ -1,6 +1,9 @@
+#pragma once 
 #include <string>
 #include <cctype>
 #include <algorithm>
+
+using std::string;
 
 auto is_not_letter = [] (unsigned char c) { return !std::isalpha(c); };
 
