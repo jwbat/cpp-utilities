@@ -1,7 +1,9 @@
 #pragma once
-#include <cstdlib>
-#include <ctime>
+#include <random> 
 
-
-srand(time(nullptr));
-int n = rand() % 10;
+auto random_int() {
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_int_distribution<int> dist(0, 9);
+    return dist(mt);
+}
