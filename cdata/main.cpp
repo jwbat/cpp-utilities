@@ -2,8 +2,7 @@
 #include <iomanip>
 #include <string>
 
-using std::cout; using std::string;
-using std::setw;
+using std::cout; using std::string; using std::setw;
 
 int main() {
 
@@ -26,3 +25,4 @@ int main() {
 
     return 0;
 }
+
