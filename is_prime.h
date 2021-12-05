@@ -1,10 +1,8 @@
-bool is_prime(int n) {
-	if (n <= 1)
-		return false;
+bool is_prime(const int number) {
+	if (number < 2) return false;
 
-	for (int i = 2; i * i <= n; i++)
-		if (n % i == 0)
-			return false;
+	for (int i = 2; i * i <= number; i++)
+		if (number % i == 0) return false;
 
 	return true;
 }
