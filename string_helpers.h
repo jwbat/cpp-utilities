@@ -4,8 +4,8 @@
 #include <string>
 
 using std::string; using std::transform; using std::reverse;
-using std::begin; using std::end;
-using std::toupper; using std::tolower;
+using std::toupper; using std::tolower; using std::remove_if;
+using std::erase;
 
 
 inline string to_upper(string s)
@@ -33,4 +33,9 @@ inline string trim(const string& s)
     return s.substr(first, (last - first + 1));
 }
 
-
+inline string remove(string s, const char c)
+{
+    auto start = remove_if(s.begin(), s.end(), [c] (const char c0) { return c == c0; });
+    s.erase(start, s.end());
+    return s;
+}

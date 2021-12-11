@@ -1,4 +1,4 @@
-#include "trim.h"
+#include "string_helpers.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -22,7 +22,12 @@ int main()
     string s6 = trim(s5);
 
     newline(); print(s5); print(s6);
-    newline();
 
+    string s7{ "**********let\'s get **rid** of these *pesky* asterisks**********, shall we? ****hmmm?!" };
+    string s8 = remove(s7, '*');
+
+    newline(); print(s7); print(s8);
+
+    newline();
     return 0;
 }
