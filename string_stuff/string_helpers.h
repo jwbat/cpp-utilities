@@ -2,10 +2,13 @@
 #include <algorithm>
 #include <cctype>
 #include <string>
+#include <vector>
+#include <sstream>
 
 using std::string; using std::transform; using std::reverse;
 using std::toupper; using std::tolower; using std::remove_if;
-using std::erase;
+using std::erase; using std::stringstream; using std::getline;
+using std::vector;
 
 
 inline string to_upper(string s)
@@ -38,4 +41,16 @@ inline string remove(string s, const char c)
     auto start = remove_if(s.begin(), s.end(), [c] (const char c0) { return c == c0; });
     s.erase(start, s.end());
     return s;
+}
+
+inline vector<string> split(string s, const char delimiter)
+{
+    auto sstr = stringstream{ s };
+    auto tokens = vector<string>{};
+    string token;
+
+    while (getline(sstr, token, delimiter))
+        if (!token.empty()) tokens.push_back(token);
+
+    return tokens;
 }
