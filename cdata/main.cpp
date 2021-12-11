@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <limits>
 
-using std::cout; using std::setw; using std::string;
+using std::cout; using std::setw;
 using std::numeric_limits;
 
 template <typename T>

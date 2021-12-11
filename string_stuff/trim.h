@@ -3,7 +3,7 @@
 #include <cctype>
 #include <string>
 
-using std::string; using std::transform;
+using std::string; using std::transform; using std::reverse;
 using std::begin; using std::end;
 using std::toupper; using std::tolower;
 
@@ -20,31 +20,17 @@ inline string to_lower(string s)
     return s;
 }
 
-
-
-
-
-
-bool is_not_space(const char c) {
-    return !isspace(static_cast<unsigned char>(c));
-}
-
-string trim_left(string s) {
-    s.erase(
-        s.begin(),
-        find_if(s.begin(), s.end(), is_not_space)
-    );
+inline string reverse(string s)
+{
+    reverse(s.begin(), s.end());
     return s;
 }
 
-string trim_right(string s) {
-    s.erase(
-        find_if(s.rbegin(), s.rend(), is_not_space).base(),
-        s.end()
-    );
-    return s;
+inline string trim(const string& s)
+{
+    auto first = s.find_first_not_of(' ');
+    auto last = s.find_last_not_of(' ');
+    return s.substr(first, (last - first + 1));
 }
 
-string trim(string s) {
-    return trim_left(trim_right(s));
-}
+
