@@ -56,6 +56,11 @@ int main()
     print_type_properties<unsigned short>();
 
     newline(2);
+    cout << setw(40) << "   unsigned char";
+    cout << "\n\t -------------------------------";
+    print_type_properties<unsigned char>();
+
+    newline(2);
     cout << setw(40) << "  bool";
     cout << "\n\t -------------------------------";
     print_type_properties<bool>();
