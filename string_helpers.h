@@ -11,24 +11,36 @@ using std::erase; using std::stringstream; using std::getline;
 using std::vector;
 
 
+/*
+ * return new string upper case
+*/
 inline string to_upper(string s)
 {
     transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return toupper(c); });
     return s;
 }
 
+/*
+ * return new string lower case
+*/
 inline string to_lower(string s)
 {
     transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return tolower(c); });
     return s;
 }
 
+/*
+ * returns new, reversed string
+*/
 inline string reverse(string s)
 {
     reverse(s.begin(), s.end());
     return s;
 }
 
+/*
+ * return new string leading and trailing white spaces removed
+*/
 inline string trim(const string& s)
 {
     auto first = s.find_first_not_of(' ');
@@ -36,6 +48,9 @@ inline string trim(const string& s)
     return s.substr(first, (last - first + 1));
 }
 
+/*
+ * return new string all incidences of char removed
+*/
 inline string remove(string s, const char c)
 {
     auto start = remove_if(s.begin(), s.end(), [c] (const char c0) { return c == c0; });
