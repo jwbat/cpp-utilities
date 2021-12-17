@@ -6,7 +6,7 @@
 #include <vector>
 
 using std::cout; using std::stold; using std::istringstream;
-using std::powl; using std::setprecision; using std::string;
+using std::pow; using std::setprecision; using std::string;
 using std::vector; using std::getline; using std::showpoint;
 
 long double convert(char* arg);  // arg can be fraction
@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 
     long double base = convert(argv[1]);
     long double exp = convert(argv[2]);
-    long double ans = powl(base, exp);
+    long double ans = pow(base, exp);
 
     cout << "\n\t" << setprecision(18) << ans
          << "\n\n";
