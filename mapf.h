@@ -7,7 +7,9 @@
 using std::vector; using std::transform; using std::begin; using std::end;
 using std::forward; using std::map; using std::queue;
 
-// mapf range
+/*
+ *  mapf range
+*/
 template <typename F, typename R>
 R mapf(F&& func, R range)
 {
@@ -15,7 +17,9 @@ R mapf(F&& func, R range)
     return range;
 }
 
-// mapf map
+/*
+ *  mapf map
+*/
 template <typename F, typename T, typename U>
 map<T, U> mapf(F&& f, const map<T, U>& m)
 {
@@ -25,7 +29,9 @@ map<T, U> mapf(F&& f, const map<T, U>& m)
     return r;
 }
 
-// mapf queue
+/*
+ *  mapf queue
+*/
 template <typename F, typename T>
 queue<T> mapf(F&& f, queue<T> q)
 {
