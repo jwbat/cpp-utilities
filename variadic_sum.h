@@ -18,8 +18,8 @@ constexpr T sum(T x)
     return x;
 }
 
-template <typename T, typename... Args>
-constexpr T sum(T x, Args... args)
+template <typename T, typename... Ts>
+constexpr T sum(T head, Ts... rest)
 {
-    return x + sum(args...);
+    return head + sum(rest...);
 }
