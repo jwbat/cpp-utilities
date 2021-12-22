@@ -14,15 +14,21 @@ using namespace std::string_literals;
 using std::regex; using std::regex_constants::icase; using std::regex_match;
 using std::pair; using std::make_pair;
 
+bool is_decimal(const string&);
+bool is_fraction(const string&);
 long double convert(char* arg);
 void print(long double ans);
-bool has_bad_chars(char* argv);
+bool invalid_argument(char* argv);
 pair<string, string> split(char* arg);
 
 int main(int argc, char** argv)
 {
-    if (argc != 3 || has_bad_chars(argv[1]) || has_bad_chars(argv[2])) 
+
+    if (argc != 3 || invalid_argument(argv[1]) || invalid_argument(argv[2])) 
+    {
+        cout << "invalid argument \n";
         return 0;
+    }
 
     long double base = convert(argv[1]);
     long double exp = convert(argv[2]);
@@ -39,8 +45,11 @@ long double convert(char* arg)
     auto [first, second] = split(arg);
 
     numer = stold(first);
-    if (second.size() == 0) denom = 1.0;
+    
+    if (second.empty()) denom = 1.0;
     else denom = stold(second);
+
+    if (denom == 0) return 0;
 
     return numer / denom;
 }
@@ -53,20 +62,37 @@ pair<string, string> split(char* arg)
     getline(iss, second);
     return make_pair(first, second);;
 }
-
-bool has_bad_chars(char* argv)
+ 
+bool is_integer(char* argv)
 {
     string s{ argv };
-    auto [first, second] = split(argv);
-    if (first.size() == 0) 
-        return true;
-    auto pattern {R"(^[^\d\.]$)"s};
+    auto pattern {R"(^\d+$)"s};
     auto rx = regex{ pattern };
-    return regex_match(first, rx) || regex_match(second, rx);
+    return regex_match(s, rx);
+}
+
+bool is_fraction(char* argv)
+{
+    string s{ argv };
+    auto pattern {R"(^\d+/?\d+|\d+$)"s};
+    auto rx = regex{ pattern };
+    return regex_match(s, rx);
+}
+
+bool is_decimal(char* argv)
+{
+    string s{ argv };
+    auto pattern {R"(^[\d]*\.[\d]+|[\d]+\.[\d]*$)"s};
+    auto rx = regex{ pattern };
+    return regex_match(s, rx);
+}
+
+bool invalid_argument(char* argv)
+{
+    return !(is_integer(argv) || is_decimal(argv) || is_fraction(argv));
 }
 
 void print(long double ans)
 {
-    cout << "\n\t" << setprecision(18) << ans
-         << "\n\n";
+    cout << "\n\t" << setprecision(18) << ans << "\n\n";
 }
