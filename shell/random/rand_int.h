@@ -2,15 +2,22 @@
 #include <random> 
 #include <chrono>
 #include <thread>
-#include <vector>
-#include <string>
 
 using std::string; using namespace std::string_literals;
-using std::this_thread::sleep_for; using std::vector;
+using std::this_thread::sleep_for; using std::array;
 using std::chrono::milliseconds;
 
 
-vector colors{ "\033[1;37m"s, "\033[1;36m"s, "\033[1;35m"s, "\033[1;34m"s, "\033[1;33m"s, "\033[1;32m"s, "\033[1;31m"s };
+constexpr const char* colors[] 
+{
+    "\033[1;37m",       // white
+    "\033[1;36m",       // cyan
+    "\033[1;35m",       // purple
+    "\033[1;34m",       // blue
+    "\033[1;33m",       // yellow
+    "\033[1;32m",       // green
+    "\033[1;31m"        // red
+};
 
 void sleep(int n) 
 {
