@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 
-using std::cout; using std::ofstream;
+using std::cout; using std::flush; using std::ofstream;
 
 int main(int argc, char** argv) {
 
@@ -10,8 +10,10 @@ int main(int argc, char** argv) {
         return 0;
     int n = atoi(argv[1]);
     
-    for (size_t i{ 0 }; i < n; ++i) {
-        cout << random_int();
+    for (size_t i{ 0 }; i < n; ++i) 
+    {
+        sleep(10);
+        cout << random_color() << random_int() << flush;
     }
     cout << "\n";
 
