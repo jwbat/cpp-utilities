@@ -73,5 +73,5 @@ long double arg_to_ld(char* argv)
 
 void print(long double ans)
 {
-    cout << "\n\t" << setprecision(18) << ans << "\n\n";
+    cout << setprecision(18) << ans << "\n";
 }
