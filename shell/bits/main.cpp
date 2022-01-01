@@ -11,9 +11,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
-
     bitset<64> b(stoull(argv[1]));
-
     string s = b.to_string();
     auto sub = s.substr(s.find('1'));
     print(sub);
