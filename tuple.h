@@ -1,9 +1,10 @@
 #pragma once
+
 #include <tuple>
 #include <iostream>
 
-using std::tuple; using std::ostream; using std::get;
-using std::tuple_size;
+using std::tuple; using std::ostream;
+using std::tuple_size; using std::get;
 
 template<size_t> struct int_{};
 

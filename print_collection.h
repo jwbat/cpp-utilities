@@ -12,18 +12,6 @@ void print_collection(const T& coll) {
     cout << "\n";
 }
 
-/*
-template <typename T>
-void print_collection(const T& coll) {
-    cout << "\n";
-    auto it = coll.begin();
-    while (it != coll.end()) {
-        cout << setw(8) << *it;
-        ++it;
-    }
-    cout << "\n";
-}
-*/
 
 template <typename T>
 void print_reverse(const T& coll) {

@@ -1,6 +1,6 @@
 #include <iostream>
-using std::cout;
 
+using std::cout;
 
 void show_compiler()
 {

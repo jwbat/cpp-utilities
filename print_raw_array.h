@@ -10,7 +10,8 @@ using std::setw;
  * auto* end = end(xs) 
 */
 
-void print_raw_array(auto* start, auto* end) {
+void print_raw_array(auto* start, auto* end) 
+{
     cout << "\n";
     for (auto it = start; it != end; ++it) {
         cout << "  " << *it;
@@ -20,7 +21,8 @@ void print_raw_array(auto* start, auto* end) {
 
 
 template <typename T>
-void print_raw_array(const T* a, size_t k) {
+void print_raw_array(const T* a, size_t k) 
+{
     for (size_t i{ 0 }; i < k; ++i) {
         if (i % 10 == 0) cout << "\n";
         cout << setw(6) << a[i];
