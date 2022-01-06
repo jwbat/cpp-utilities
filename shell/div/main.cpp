@@ -5,7 +5,7 @@ int main(int argc, char** argv)
 {
     if (argc != 2 || invalid_argument(argv[1])) 
     {
-        cout << "\n invalid argument \n\n";
+        cout << " usage: div 1/3  or  div 2.7/1.9 \n";
         return 0;
     }
 
