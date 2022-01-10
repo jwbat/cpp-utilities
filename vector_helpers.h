@@ -5,7 +5,7 @@ using std::vector; using std::forward;
 
 
 /*
- *    usage: push_back(v, 1, 2, 3, ...);
+ *      push_back(v, 1, 2, 3, ...);
 */
 template <typename T, typename... Ts>
 void push_back(vector<T>& v, Ts&&... values)
