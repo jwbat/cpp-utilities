@@ -49,7 +49,7 @@ size_t read_data(const char* const filename, function<char* (const size_t)> allo
         }
         catch(ios_base::failure&)
         {
-            cout << "could not write data\n";
+            cout << "could not read data\n";
         }
 
         infile.close();
