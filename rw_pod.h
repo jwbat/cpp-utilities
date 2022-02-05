@@ -1,14 +1,16 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include <type_traits>
 
 using std::string;
 using std::ifstream; using std::ofstream;
 using std::ios; using std::vector;
+using std::is_standard_layout_v; using std::is_trivial_v;
 
 
-template <typename T>
+template <typename T> 
+requires is_standard_layout_v<T> && is_trivial_v<T>
 void write_pod(const string filename, vector<T>& output)
 {
     ofstream outfile(filename, ios::binary);
@@ -22,7 +24,8 @@ void write_pod(const string filename, vector<T>& output)
 }
 
 
-template <typename T>
+template <typename T> 
+requires is_standard_layout_v<T> && is_trivial_v<T>
 void read_pod(const string filename, vector<T>& input)
 {
     ifstream infile(filename, ios::binary);
@@ -39,4 +42,3 @@ void read_pod(const string filename, vector<T>& input)
         infile.close();
     }
 }
-
