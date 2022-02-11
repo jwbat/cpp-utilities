@@ -11,36 +11,54 @@ using std::erase; using std::stringstream; using std::getline;
 using std::vector;
 
 
-/*
- * return new string upper case
-*/
+inline string to_upper(string s);
+inline string to_lower(string s);
+inline string reverse(string s);
+inline void reverse(string& s);
+inline string trim(const string& s);
+inline string remove(string s, const char c);
+inline vector<string> split(string s, const char delimiter);
+
+
+
+// return new string upper case
 inline string to_upper(string s)
 {
     transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return toupper(c); });
     return s;
 }
 
-/*
- * return new string lower case
-*/
+// return new string lower case
 inline string to_lower(string s)
 {
     transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return tolower(c); });
     return s;
 }
 
-/*
- * returns new, reversed string
-*/
+// return a new, reversed string
 inline string reverse(string s)
 {
     reverse(s.begin(), s.end());
     return s;
 }
 
-/*
- * return new string leading and trailing white spaces removed
-*/
+// reverse string in place
+inline void reverse(string& s)
+{
+    int first = 0;
+    int last = s.size() - 1;
+    char temp;
+    while (first < last)
+    {
+        temp = s[first];
+        s[first] = s[last];
+        s[last] = temp;
+        ++first;
+        --last;
+    }
+}
+
+// return new string leading and trailing white spaces removed
 inline string trim(const string& s)
 {
     auto first = s.find_first_not_of(' ');
@@ -48,9 +66,7 @@ inline string trim(const string& s)
     return s.substr(first, (last - first + 1));
 }
 
-/*
- * return new string all incidences of char removed
-*/
+// return new string all incidences of char removed
 inline string remove(string s, const char c)
 {
     auto start = remove_if(s.begin(), s.end(), [c] (const char c0) { return c == c0; });
@@ -58,6 +74,7 @@ inline string remove(string s, const char c)
     return s;
 }
 
+// return vector of strings from string split on delimiter
 inline vector<string> split(string s, const char delimiter)
 {
     auto sstr = stringstream{ s };
