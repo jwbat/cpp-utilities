@@ -26,10 +26,10 @@ struct Timer
 };
 
 /*
-void func_to_be_timed()
+void timed_func()
 {
-    Timer t;        // clock started on construction
-    // do stuff 
-                    // clock stopped on destruction
+    Timer timer;    // start clock on construction
+    // do func work
+                    // stop clock  on destruction
 }
  */
