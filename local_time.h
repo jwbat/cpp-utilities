@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <chrono>
 
-using std::cout; using std::chrono::system_clock;
-using std::localtime; using std::put_time;
+using std::cout; using std::localtime; using std::put_time;
+using namespace std::chrono;
 
 inline void print_time()
 {
