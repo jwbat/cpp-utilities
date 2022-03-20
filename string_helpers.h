@@ -45,16 +45,15 @@ inline string reverse(string s)
 // reverse string in place
 inline void reverse(string& s)
 {
-    int first = 0;
-    int last = s.size() - 1;
-    char temp;
-    while (first < last)
+    int i = 0;
+    int j = s.size() - 1;
+
+    while (i < j)
     {
-        temp = s[first];
-        s[first] = s[last];
-        s[last] = temp;
-        ++first;
-        --last;
+        char temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+        ++i; --j;
     }
 }
 
