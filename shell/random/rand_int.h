@@ -4,8 +4,7 @@
 #include <thread>
 
 using std::string; using namespace std::string_literals;
-using std::this_thread::sleep_for; using std::array;
-using std::chrono::milliseconds;
+using std::array;
 
 
 constexpr const char* colors[] 
@@ -18,11 +17,6 @@ constexpr const char* colors[]
     "\033[1;32m",       // green
     "\033[1;31m"        // red
 };
-
-void sleep(int n) 
-{
-    sleep_for(milliseconds(n));
-}
 
 auto random_int() 
 {

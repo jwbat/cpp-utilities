@@ -11,11 +11,8 @@ int main(int argc, char** argv) {
     int n = atoi(argv[1]);
     
     for (size_t i{ 0 }; i < n; ++i) 
-    {
-        sleep(10);
-        cout << random_color() << random_int() << flush;
-    }
+        cout << random_int();
     cout << "\n";
-
+//<< random_color() 
     return 0;
 }
